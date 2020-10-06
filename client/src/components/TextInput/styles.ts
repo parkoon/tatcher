@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { palette } from '@/helpers/palette'
+import { palette } from '@Helpers/palette'
 
 const InputError = ({ error }: { error?: boolean }) =>
     error &&

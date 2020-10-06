@@ -1,7 +1,10 @@
 import React from 'react'
 
-function Text() {
-    return <div></div>
+import { TextProps } from './types'
+import { TextWrapper } from './styles'
+
+function Text({ children, ...props }: TextProps) {
+    return <TextWrapper {...props}>{children}</TextWrapper>
 }
 
 export default Text

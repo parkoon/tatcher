@@ -11,3 +11,7 @@ export const CommonStyles = css<CommonTypographyProps>`
     text-align: ${({ center, right }) => (center ? 'center' : right ? 'right' : 'left')};
     word-break: ${({ wordBreak }) => (wordBreak ? 'keep-all' : 'normal')};
 `
+
+export const TextWrapper = styled.span`
+    ${CommonStyles}
+`
