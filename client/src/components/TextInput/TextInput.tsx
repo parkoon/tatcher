@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Text from '@Components/Typography/Text'
+import { palette } from '@Helpers/palette'
 import { Container } from './styles'
 
 type TextInput = {
@@ -9,11 +10,12 @@ type TextInput = {
     helperText?: string
 }
 function TextInput({ label, helperText, ...props }: TextInput) {
+    const helperTextColor = props.error ? palette.error : palette.black
     return (
         <Container {...props}>
             <input required />
             <label>{label}</label>
-            <Text>{helperText}</Text>
+            <Text color={helperTextColor}>{helperText}</Text>
         </Container>
     )
 }

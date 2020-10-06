@@ -46,7 +46,7 @@ export const Container = styled.div<{ error?: boolean }>`
     span {
         display: block;
         position: absolute;
-        bottom: -20px;
+        bottom: -22px;
     }
 
     label {
