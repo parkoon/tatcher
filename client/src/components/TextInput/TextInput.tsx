@@ -2,11 +2,14 @@ import React from 'react'
 
 import { Container } from './styles'
 
-function TextInput() {
+type TextInput = {
+    label: string
+}
+function TextInput({ label }: TextInput) {
     return (
         <Container>
             <input required />
-            <label>heheheheh</label>
+            <label>{label}</label>
         </Container>
     )
 }
