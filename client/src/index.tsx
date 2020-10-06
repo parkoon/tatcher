@@ -7,6 +7,9 @@ import App from './App'
 
 const GlobalStyle = createGlobalStyle`
     ${reset};
+    * {
+        box-sizing: border-box;
+    }
 `
 
 ReactDOM.render(
