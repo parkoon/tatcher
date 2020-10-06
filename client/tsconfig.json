@@ -14,10 +14,11 @@
         "isolatedModules": true,
         "noEmit": true,
         "jsx": "react",
-        "baseUrl": "./",
+        "baseUrl": ".",
         "paths": {
             "@/*": ["src/*"],
-            "@Components/*": ["src/components/*"]
+            "@Components/*": ["src/components/*"],
+            "@Modals/*": ["src/modals/*"]
         }
     },
     "include": ["src"]
