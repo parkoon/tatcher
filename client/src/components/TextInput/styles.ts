@@ -1,7 +1,28 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { palette } from '@/helpers/palette'
 
-export const Container = styled.div`
+const InputError = ({ error }: { error?: boolean }) =>
+    error &&
+    css`
+        input {
+            color: ${palette.error};
+            border-color: ${palette.error};
+            &:focus,
+            &:hover {
+                border-color: ${palette.error};
+            }
+        }
+
+        label {
+            color: ${palette.error};
+        }
+
+        input:focus ~ label,
+        input:valid ~ label {
+            color: ${palette.error};
+        }
+    `
+export const Container = styled.div<{ error?: boolean }>`
     position: relative;
 
     &:hover {
@@ -22,6 +43,12 @@ export const Container = styled.div`
         }
     }
 
+    span {
+        display: block;
+        position: absolute;
+        bottom: -20px;
+    }
+
     label {
         display: block;
         position: absolute;
@@ -31,6 +58,7 @@ export const Container = styled.div`
         transition: 0.3s;
         background: ${palette.white};
         font-size: ${({ theme }) => theme.fontSizes.lg};
+        /* label이 있는 경우 input 에 마우스 hover 시 input hover 동작 안하는 부분 처리 */
         pointer-events: none;
     }
 
@@ -41,4 +69,6 @@ export const Container = styled.div`
         font-size: ${({ theme }) => theme.fontSizes.sm};
         color: ${palette.primary.main};
     }
+
+    ${InputError}
 `
