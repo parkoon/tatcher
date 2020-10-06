@@ -3,7 +3,7 @@ import { palette } from './palette'
 const calcRem = (size: number) => `${size / 16}rem`
 
 const fontSizes = {
-    small: calcRem(14),
+    sm: calcRem(14),
     base: calcRem(16),
     lg: calcRem(18),
     xl: calcRem(20),
@@ -13,21 +13,21 @@ const fontSizes = {
 }
 
 const paddings = {
-    small: calcRem(10),
-    base: calcRem(12),
-    lg: calcRem(14),
-    xl: calcRem(16),
-    xxl: calcRem(18),
-    xxxl: calcRem(20),
+    sm: calcRem(8),
+    base: calcRem(10),
+    lg: calcRem(12),
+    xl: calcRem(14),
+    xxl: calcRem(16),
+    xxxl: calcRem(18),
 }
-
+export type MarginSize = 'sm' | 'base' | 'lg' | 'xl' | 'xxl' | 'xxxl'
 const margins = {
-    small: calcRem(10),
-    base: calcRem(12),
-    lg: calcRem(14),
-    xl: calcRem(16),
-    xxl: calcRem(18),
-    xxxl: calcRem(20),
+    sm: calcRem(12),
+    base: calcRem(14),
+    lg: calcRem(16),
+    xl: calcRem(18),
+    xxl: calcRem(20),
+    xxxl: calcRem(22),
 }
 
 const interval = {

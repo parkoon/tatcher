@@ -13,5 +13,7 @@ export const palette = {
     },
     black: '#212121',
     white: '#fff',
+    error: '#c62828',
     greyscale: ['#fafafa', '#f5f5f5', '#eeeeee', '#e0e0e0', '#bdbdbd', '#9e9e9e', '#757575', '#616161'],
+    inputBorder: '#3c4043',
 }
