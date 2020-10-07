@@ -18,7 +18,7 @@ function ModalContainer({ children, open = false, onClose }: ModalContainerProps
                     onClose()
                 }}
             />
-            <Wrapper>{children}</Wrapper>
+            <Wrapper key={Date.now()}>{children}</Wrapper>
         </Container>,
         document.getElementById('modal')!,
     )
