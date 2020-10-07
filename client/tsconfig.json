@@ -18,7 +18,8 @@
         "paths": {
             "@Components/*": ["src/components/*"],
             "@Modals/*": ["src/modals/*"],
-            "@Helpers/*": ["src/helpers/*"]
+            "@Helpers/*": ["src/helpers/*"],
+            "@Hooks/*": ["src/hooks/*"]
         }
     },
     "include": ["src"]
