@@ -18,6 +18,10 @@ type SignInModalProps = {
 
 function SignInModal(props: SignInModalProps) {
     const { onClose } = props
+
+    const handleSuccess = () => {
+        onClose()
+    }
     return (
         <ModalContainer {...props}>
             <Wrapper>
@@ -31,7 +35,7 @@ function SignInModal(props: SignInModalProps) {
                     <div className="close-icon">
                         <IconButton onClick={onClose} icon={<AiOutlineClose />} />
                     </div>
-                    <SignInForm />
+                    <SignInForm onSuccess={handleSuccess} />
 
                     <div className="sign-up-field">
                         <Text block center fontSize="sm">
