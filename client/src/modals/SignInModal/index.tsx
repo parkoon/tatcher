@@ -1,16 +1,15 @@
 import React from 'react'
+import { Formik } from 'formik'
 import { AiOutlineClose } from 'react-icons/ai'
 
 import Title from '@Components/Typography/Title'
-import TextInput from '@Components/TextInput'
-import VerticalSpacing from '@Components/VerticalSpacing'
-import Button from '@Components/Button'
 import ModalContainer from '@Modals/ModalContainer'
 import { palette } from '@Helpers/palette'
 import { Wrapper } from './styles'
 import Text from '@Components/Typography/Text'
 import Anchor from '@Components/Anchor'
 import IconButton from '@Components/IconButton'
+import SignInForm from '@Components/Form/SignInForm'
 
 type SignInModalProps = {
     open: boolean
@@ -32,23 +31,7 @@ function SignInModal(props: SignInModalProps) {
                     <div className="close-icon">
                         <IconButton onClick={onClose} icon={<AiOutlineClose />} />
                     </div>
-                    <VerticalSpacing bottom size="lg">
-                        <Title block bold fontSize="xxxl">
-                            로그인
-                        </Title>
-                    </VerticalSpacing>
-                    <VerticalSpacing bottom size="xxxl">
-                        <Text>이메일로 로그인하기</Text>
-                    </VerticalSpacing>
-
-                    <VerticalSpacing bottom size="lg">
-                        <TextInput label="아이디를 입력해주세요" />
-                    </VerticalSpacing>
-                    <VerticalSpacing bottom size="lg">
-                        <TextInput label="비밀번호를 입력해주세요" />
-                    </VerticalSpacing>
-
-                    <Button onClick={() => alert('로그인하기')}>로그인하기</Button>
+                    <SignInForm />
 
                     <div className="sign-up-field">
                         <Text block center fontSize="sm">
