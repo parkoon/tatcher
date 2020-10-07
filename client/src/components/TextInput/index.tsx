@@ -6,16 +6,19 @@ import { Container } from './styles'
 
 type TextInput = {
     label: string
+    name: string
     error?: boolean
     helperText?: string
 }
-function TextInput({ label, helperText, ...props }: TextInput) {
+function TextInput({ label, helperText, name, ...props }: TextInput) {
     const helperTextColor = props.error ? palette.error : palette.black
     return (
         <Container {...props}>
-            <input required />
+            <input required name={name} />
             <label>{label}</label>
-            <Text color={helperTextColor}>{helperText}</Text>
+            <Text fontSize="sm" color={helperTextColor}>
+                {helperText}
+            </Text>
         </Container>
     )
 }
