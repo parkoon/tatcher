@@ -3,6 +3,7 @@ import { palette } from '@Helpers/palette'
 
 export const Wrapper = styled.button`
     border: none;
+    outline: none;
     background: transparent;
     cursor: pointer;
     padding: 0;
