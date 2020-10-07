@@ -4,11 +4,17 @@ import { ThemeProvider } from 'styled-components'
 
 import Header from '@Components/Header'
 import theme from '@Helpers/theme'
+import { NotificationProvider } from '@Components/Notification'
+import { AuthProvider } from '@Context/auth'
 
 function App() {
     return (
         <ThemeProvider theme={theme}>
-            <Header title="테니스 친구 찾기" />
+            <AuthProvider>
+                <NotificationProvider placement="top-right">
+                    <Header title="테니스 친구 찾기" />
+                </NotificationProvider>
+            </AuthProvider>
         </ThemeProvider>
     )
 }
