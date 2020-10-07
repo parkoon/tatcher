@@ -13,12 +13,12 @@ const fontSizes = {
 }
 
 const paddings = {
-    sm: calcRem(8),
-    base: calcRem(10),
-    lg: calcRem(12),
-    xl: calcRem(14),
-    xxl: calcRem(16),
-    xxxl: calcRem(18),
+    sm: calcRem(12),
+    base: calcRem(14),
+    lg: calcRem(16),
+    xl: calcRem(18),
+    xxl: calcRem(20),
+    xxxl: calcRem(22),
 }
 export type MarginSize = 'sm' | 'base' | 'lg' | 'xl' | 'xxl' | 'xxxl'
 const margins = {
