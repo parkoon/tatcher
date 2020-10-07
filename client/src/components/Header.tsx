@@ -7,7 +7,6 @@ import SearchIcon from '@material-ui/icons/Search'
 import Typography from '@material-ui/core/Typography'
 
 import SignInModal from '@Modals/SignInModal'
-import Avatar from '@Components/Avatar'
 import AvatarWithDropDown from '@Components/Dropdown/AvatarWithDropdown'
 
 const useStyles = makeStyles((theme) => ({
