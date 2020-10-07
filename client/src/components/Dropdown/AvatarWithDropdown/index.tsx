@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 
 import { Wrapper, ProfileField, Item } from './styles'
-import Avatar from '@Components/Avatar/Avatar'
-import TextButton from '@Components/TextButton/TextButton'
+import Avatar from '@Components/Avatar'
+import TextButton from '@Components/TextButton'
 import Text from '@Components/Typography/Text'
-import DropdownContainer from '@Components/Dropdown/DropdownContainer/DropdownContainer'
+import DropdownContainer from '@Components/Dropdown/DropdownContainer'
 
 type AvatarWithDropDownProps = {
     source: string

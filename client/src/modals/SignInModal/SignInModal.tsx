@@ -2,15 +2,15 @@ import React from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
 
 import Title from '@Components/Typography/Title'
-import TextInput from '@Components/TextInput/TextInput'
-import VerticalSpacing from '@Components/VerticalSpacing/VerticalSpacing'
-import Button from '@Components/Button/Button'
+import TextInput from '@Components/TextInput'
+import VerticalSpacing from '@Components/VerticalSpacing'
+import Button from '@Components/Button'
 import ModalContainer from '@Modals/ModalContainer/ModalContainer'
 import { palette } from '@Helpers/palette'
 import { Wrapper } from './styles'
 import Text from '@Components/Typography/Text'
-import Anchor from '@Components/Anchor/Anchor'
-import IconButton from '@Components/IconButton/IconButton'
+import Anchor from '@Components/Anchor'
+import IconButton from '@Components/IconButton'
 
 type SignInModalProps = {
     open: boolean
