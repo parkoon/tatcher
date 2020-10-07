@@ -22,12 +22,12 @@ const paddings = {
 }
 export type MarginSize = 'sm' | 'base' | 'lg' | 'xl' | 'xxl' | 'xxxl'
 const margins = {
-    sm: calcRem(12),
-    base: calcRem(14),
-    lg: calcRem(16),
-    xl: calcRem(18),
-    xxl: calcRem(20),
-    xxxl: calcRem(22),
+    sm: calcRem(14),
+    base: calcRem(16),
+    lg: calcRem(18),
+    xl: calcRem(22),
+    xxl: calcRem(24),
+    xxxl: calcRem(26),
 }
 
 const interval = {
