@@ -47,7 +47,7 @@ function Header({ title }: HeaderProps) {
                 </Button>
             </Toolbar>
 
-            <SignInModal onClose={handleClose} open={true} />
+            <SignInModal onClose={handleClose} open={open} />
         </>
     )
 }

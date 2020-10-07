@@ -18,6 +18,7 @@ type SignInModalProps = {
 }
 
 function SignInModal(props: SignInModalProps) {
+    const { onClose } = props
     return (
         <ModalContainer {...props}>
             <Wrapper>
@@ -29,7 +30,7 @@ function SignInModal(props: SignInModalProps) {
                 </div>
                 <div className="right-column">
                     <div className="close-icon">
-                        <IconButton icon={<AiOutlineClose />} />
+                        <IconButton onClick={onClose} icon={<AiOutlineClose />} />
                     </div>
                     <VerticalSpacing bottom size="lg">
                         <Title block bold fontSize="xxxl">
