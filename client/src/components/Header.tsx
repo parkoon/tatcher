@@ -6,7 +6,7 @@ import IconButton from '@material-ui/core/IconButton'
 import SearchIcon from '@material-ui/icons/Search'
 import Typography from '@material-ui/core/Typography'
 
-import SignInModal from '@Modals/SignInModal/SignInModal'
+import SignInModal from '@Modals/SignInModal'
 import Avatar from '@Components/Avatar'
 import AvatarWithDropDown from '@Components/Dropdown/AvatarWithDropdown'
 
