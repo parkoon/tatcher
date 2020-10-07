@@ -19,7 +19,8 @@
             "@Components/*": ["src/components/*"],
             "@Modals/*": ["src/modals/*"],
             "@Helpers/*": ["src/helpers/*"],
-            "@Hooks/*": ["src/hooks/*"]
+            "@Hooks/*": ["src/hooks/*"],
+            "@Context/*": ["src/context/*"]
         }
     },
     "include": ["src"]
