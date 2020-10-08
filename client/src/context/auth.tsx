@@ -5,13 +5,13 @@ const initialState = {
     user: null,
 }
 
-if (localStorage.getItem('jwt')) {
+if (localStorage.getItem('tuid')) {
     const jwt = localStorage.getItem('tuid')
 
     const decodedToken = jwt ? jwtDecode<any>(jwt) : null
 
     if (decodedToken.exp * 1000 < Date.now()) {
-        localStorage.removeItem('jwt')
+        localStorage.removeItem('tuid')
     } else {
         initialState.user = decodedToken
     }

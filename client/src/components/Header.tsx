@@ -8,6 +8,7 @@ import Typography from '@material-ui/core/Typography'
 
 import SignInModal from '@Modals/SignInModal'
 import AvatarWithDropDown from '@Components/Dropdown/AvatarWithDropdown'
+import { useAuth } from '@Context/auth'
 
 const useStyles = makeStyles((theme) => ({
     toolbar: {
@@ -23,6 +24,7 @@ type HeaderProps = {
 }
 function Header({ title }: HeaderProps) {
     const classes = useStyles()
+    const { user } = useAuth()
 
     const [open, setOpen] = useState(false)
 
@@ -43,11 +45,14 @@ function Header({ title }: HeaderProps) {
                 <IconButton>
                     <SearchIcon />
                 </IconButton>
-                <Button variant="outlined" size="small" onClick={handleOpen}>
-                    로그인
-                </Button>
 
-                <AvatarWithDropDown source="https://api.adorable.io/avatars/42/abott@adorable.png" />
+                {user ? (
+                    <AvatarWithDropDown source="https://api.adorable.io/avatars/42/abott@adorable.png" />
+                ) : (
+                    <Button variant="outlined" size="small" onClick={handleOpen}>
+                        로그인
+                    </Button>
+                )}
             </Toolbar>
 
             <SignInModal onClose={handleClose} open={open} />

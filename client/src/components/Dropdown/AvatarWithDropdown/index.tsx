@@ -5,17 +5,26 @@ import Avatar from '@Components/Avatar'
 import TextButton from '@Components/TextButton'
 import Text from '@Components/Typography/Text'
 import DropdownContainer from '@Components/Dropdown/DropdownContainer'
+import { useAuth } from '@Context/auth'
+import { useNotification } from '@Components/Notification'
 
 type AvatarWithDropDownProps = {
     source: string
 }
 function AvatarWithDropDown({ source }: AvatarWithDropDownProps) {
     const [open, setOpen] = useState(false)
+    const { logout } = useAuth()
+    const { addNotification } = useNotification()
 
     const handleAvatarClick = () => {
         if (!open) {
             setOpen(true)
         }
+    }
+
+    const handleLogout = () => {
+        logout()
+        addNotification('조심히 들어가세요!', { appearance: 'success' })
     }
 
     return (
@@ -35,7 +44,7 @@ function AvatarWithDropDown({ source }: AvatarWithDropDownProps) {
                     <Item>무엇이 들어갈까 1</Item>
                     <Item>무엇이 들어갈까 2</Item>
                     <Item>무엇이 들어갈까 3</Item>
-                    <Item>무엇이 들어갈까 4</Item>
+                    <Item onClick={handleLogout}>로그아웃</Item>
                 </DropdownContainer>
             )}
         </Wrapper>
