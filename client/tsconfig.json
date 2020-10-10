@@ -20,7 +20,8 @@
             "@Modals/*": ["src/modals/*"],
             "@Helpers/*": ["src/helpers/*"],
             "@Hooks/*": ["src/hooks/*"],
-            "@Context/*": ["src/context/*"]
+            "@Context/*": ["src/context/*"],
+            "@Pages/*": ["src/pages/*"]
         }
     },
     "include": ["src"]
