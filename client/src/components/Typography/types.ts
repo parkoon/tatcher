@@ -11,6 +11,7 @@ export type CommonTypographyProps = {
     style?: React.CSSProperties
     block?: boolean
     wordBreak?: boolean
+    className?: string
 }
 export type TitleProps = {
     level?: Level

@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import { palette } from '@Helpers/palette'
 
-const InputError = ({ error }: { error?: boolean }) =>
+const InputError = ({ error }: { error?: boolean | string }) =>
     error &&
     css`
         input {
@@ -22,7 +22,8 @@ const InputError = ({ error }: { error?: boolean }) =>
             color: ${palette.error};
         }
     `
-export const Container = styled.div<{ error?: boolean }>`
+
+export const Wrapper = styled.div`
     position: relative;
 
     &:hover {
@@ -41,12 +42,6 @@ export const Container = styled.div<{ error?: boolean }>`
         &:focus {
             border-color: ${palette.primary.main};
         }
-    }
-
-    span {
-        display: block;
-        position: absolute;
-        bottom: -18px;
     }
 
     label {
@@ -71,4 +66,10 @@ export const Container = styled.div<{ error?: boolean }>`
     }
 
     ${InputError}
+`
+export const Container = styled.div<{ error?: boolean | string }>`
+    span {
+        margin-top: 5px;
+        margin-bottom: 7px;
+    }
 `
