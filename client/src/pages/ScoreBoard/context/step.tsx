@@ -1,23 +1,38 @@
 import React, { createContext, useContext, useState } from 'react'
+import { GameType } from '../types'
 
+type GameScore = {
+    point: number
+    score: number
+}
+type Step = {
+    0: GameType
+    1: {
+        A: string[]
+        B: string[]
+    }
+    2: {
+        A: GameScore
+        B: GameScore
+    }
+}
 type StepContextType = {
     go(index: number): void
     next(): void
     back(): void
     setActiveStepValue(payload: any): void
     activeStep: number
+    step: Step
 }
 export const StepContext = createContext({} as StepContextType)
 
-const MAX_STEP = 2
 type StepProviderProps = {
     children: React.ReactNode
     maxStep: number
 }
 export const StepProvider: React.FC<StepProviderProps> = ({ children, maxStep }) => {
     const [activeStep, setActiveStep] = useState(0)
-    const [step, setStep] = useState({})
-
+    const [step, setStep] = useState({} as Step)
     const next = () => {
         setActiveStep((prevActiveStep) => {
             if (prevActiveStep === maxStep) return prevActiveStep
@@ -51,6 +66,7 @@ export const StepProvider: React.FC<StepProviderProps> = ({ children, maxStep })
                 go,
                 activeStep,
                 setActiveStepValue,
+                step,
             }}
         >
             {children}
