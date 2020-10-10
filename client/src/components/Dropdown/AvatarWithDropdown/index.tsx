@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link, useHistory } from 'react-router-dom'
 
 import { Wrapper, ProfileField, Item } from './styles'
 import Avatar from '@Components/Avatar'
@@ -11,10 +12,13 @@ import { useNotification } from '@Components/Notification'
 type AvatarWithDropDownProps = {
     source: string
 }
-function AvatarWithDropDown({ source }: AvatarWithDropDownProps) {
+function AvatarWithDropDown({ source, ...props }: AvatarWithDropDownProps) {
     const [open, setOpen] = useState(false)
+    const history = useHistory()
     const { logout } = useAuth()
     const { addNotification } = useNotification()
+
+    console.log('props', props)
 
     const handleAvatarClick = () => {
         if (!open) {
@@ -25,6 +29,11 @@ function AvatarWithDropDown({ source }: AvatarWithDropDownProps) {
     const handleLogout = () => {
         logout()
         addNotification('조심히 들어가세요!', { appearance: 'success' })
+    }
+
+    const goTo = (path: string) => {
+        history.push(path)
+        setOpen(false)
     }
 
     return (
@@ -40,7 +49,9 @@ function AvatarWithDropDown({ source }: AvatarWithDropDownProps) {
                             <TextButton>프로필 관리</TextButton>
                         </div>
                     </ProfileField>
-                    <Item>스코어 보드 생성</Item>
+
+                    <Item onClick={() => goTo('scoreboard')}>스코어 보드 생성 </Item>
+
                     <Item>무엇이 들어갈까 1</Item>
                     <Item>무엇이 들어갈까 2</Item>
                     <Item>무엇이 들어갈까 3</Item>

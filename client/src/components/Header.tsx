@@ -13,6 +13,7 @@ import { useAuth } from '@Context/auth'
 const useStyles = makeStyles((theme) => ({
     toolbar: {
         borderBottom: `1px solid ${theme.palette.divider}`,
+        marginBottom: '24px',
     },
     toolbarTitle: {
         flex: 1,
