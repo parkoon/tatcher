@@ -20,7 +20,7 @@ type StepContextType = {
     go(index: number): void
     next(): void
     back(): void
-    setActiveStepValue(payload: any): void
+    setActiveStepValue(payload: any, stepCount?: number): void
     activeStep: number
     step: Step
 }
@@ -32,7 +32,23 @@ type StepProviderProps = {
 }
 export const StepProvider: React.FC<StepProviderProps> = ({ children, maxStep }) => {
     const [activeStep, setActiveStep] = useState(0)
-    const [step, setStep] = useState({} as Step)
+    const [step, setStep] = useState<Step>({
+        0: 'double',
+        1: {
+            A: [''],
+            B: [''],
+        },
+        2: {
+            A: {
+                point: 0,
+                score: 0,
+            },
+            B: {
+                point: 0,
+                score: 0,
+            },
+        },
+    })
     const next = () => {
         setActiveStep((prevActiveStep) => {
             if (prevActiveStep === maxStep) return prevActiveStep
@@ -51,10 +67,10 @@ export const StepProvider: React.FC<StepProviderProps> = ({ children, maxStep })
         setActiveStep(index)
     }
 
-    const setActiveStepValue = (payload: any) => {
+    const setActiveStepValue = (payload: any, stepCount?: number) => {
         setStep({
             ...step,
-            [activeStep]: payload,
+            [stepCount ? stepCount : activeStep]: payload,
         })
     }
 
