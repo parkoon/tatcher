@@ -20,7 +20,13 @@ function GameScoreBoard({}: ScoreBoardTypes) {
     const handleGamePoint = (winner: Winner) => {
         const { A, B } = step[2]
 
-        console.log(winner)
+        console.log(winner, A, B)
+
+        if (winner === 'teamA') {
+            A.
+        } else {
+
+        }
 
         setActiveStepValue(
             {
