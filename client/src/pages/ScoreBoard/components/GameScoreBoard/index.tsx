@@ -11,6 +11,8 @@ import { currentGamePoint } from './helpers'
 const ACTIVE_STEP = 2
 
 const GAME_POINT = [0, 15, 30, 40]
+const TIE_BREAK_POINT = 5
+const MAX_GAME_SCORE = 6
 
 type ScoreBoardTypes = {}
 function GameScoreBoard({}: ScoreBoardTypes) {
@@ -30,7 +32,7 @@ function GameScoreBoard({}: ScoreBoardTypes) {
             // no ad popup
         }
 
-        if (aTeamPoint > GAME_POINT.length || bTeamPoint > GAME_POINT.length) {
+        if (aTeamPoint > GAME_POINT.length) {
             setATeamPoint(0)
             setBTeamPoint(0)
             setATeamScore((s) => s + 1)
@@ -41,6 +43,19 @@ function GameScoreBoard({}: ScoreBoardTypes) {
             setBTeamScore((s) => s + 1)
         }
     }, [aTeamPoint, bTeamPoint])
+
+    useEffect(() => {
+        if (aTeamScore === TIE_BREAK_POINT && bTeamScore === TIE_BREAK_POINT) {
+            alert('tie')
+        }
+
+        if (aTeamScore === MAX_GAME_SCORE) {
+            alert('a 팀 윈')
+        }
+        if (bTeamScore === MAX_GAME_SCORE) {
+            alert('b 팀 윈')
+        }
+    }, [aTeamScore, bTeamScore])
     const handleGamePoint = (winner: Winner) => {
         const { A, B } = step[2]
 
@@ -94,7 +109,7 @@ function GameScoreBoard({}: ScoreBoardTypes) {
                         <Text>김진아</Text>
                     </PlayerNameField>
 
-                    <Point>{step[2].A.score}</Point>
+                    <Point>{aTeamScore}</Point>
                     <GamePoint onClick={() => handleGamePoint('teamA')}>{aTeamPoint}</GamePoint>
                 </Row>
                 <Row>
@@ -103,7 +118,7 @@ function GameScoreBoard({}: ScoreBoardTypes) {
                         <Text>김진아</Text>
                     </PlayerNameField>
 
-                    <Point>{step[2].B.score}</Point>
+                    <Point>{bTeamScore}</Point>
                     <GamePoint onClick={() => handleGamePoint('teamB')}>{bTeamPoint}</GamePoint>
                 </Row>
             </Wrapper>
