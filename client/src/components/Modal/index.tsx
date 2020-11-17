@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { createPortal } from 'react-dom'
 
 type ModalProps = {
     children: React.ReactNode
@@ -16,13 +17,13 @@ function Modal({ children }: ModalProps) {
     }
 
     if (display) {
-        return (
+        return createPortal(
             <div className={'modal-wrapper'}>
                 <div className={'modal-backdrop'} onClick={close} />
                 <div className={'modal-box'}>
             {children}
                 </div>
-            </div>
+            </div>, document.getElementById('modal')!
         )
     }
 
