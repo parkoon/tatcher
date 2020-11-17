@@ -1,12 +1,23 @@
-import React, { useState } from 'react'
+import React, { useState, forwardRef, useImperativeHandle } from 'react'
 import { createPortal } from 'react-dom'
 
+export type ModalRef = {
+    openModal(): void
+    close(): void
+}
 type ModalProps = {
     children: React.ReactNode
 }
-function Modal({ children }: ModalProps) {
+const Modal = forwardRef<ModalRef, ModalProps>(({ children}, ref) => {
 
     const [display, setDisplay] = useState(true)
+
+    useImperativeHandle(ref, () => {
+        return {
+            openModal:() => open(),
+            close: () => close()
+        }
+    })
 
     const open = () => {
         setDisplay(true)
@@ -29,6 +40,6 @@ function Modal({ children }: ModalProps) {
 
     return null
 
-}
+})
 
 export default Modal
