@@ -5,6 +5,8 @@ import reset from 'styled-reset'
 
 import App from './App'
 
+import './index.css'
+
 const GlobalStyle = createGlobalStyle`
     ${reset};
     * {
