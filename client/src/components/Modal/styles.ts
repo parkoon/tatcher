@@ -1,4 +1,18 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+
+const BoxFade = keyframes`
+    from {
+
+        top: 60%;
+        /* transform: translateY(-20px) */
+    }
+
+    to {
+        top: 50%;
+
+        /* transform: translateY(0px) */
+    }
+`
 
 export const Wrapper = styled.div`
     position: fixed;
@@ -30,4 +44,6 @@ export const Box = styled.div`
     z-index: 101;
     overflow: auto;
     padding: 40px;
+    transition: 0.2s;
+    animation: ${BoxFade} 0.3s 0s linear alternate;
 `
