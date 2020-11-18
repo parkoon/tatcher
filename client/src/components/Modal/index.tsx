@@ -8,16 +8,8 @@ export type ModalRef = {
 type ModalProps = {
     children: React.ReactNode
 }
-const Modal = forwardRef<ModalRef, ModalProps>(({ children}, ref) => {
-
+const Modal = forwardRef<ModalRef, ModalProps>(({ children }, ref) => {
     const [display, setDisplay] = useState(true)
-
-    useImperativeHandle(ref, () => {
-        return {
-            openModal:() => open(),
-            close: () => close()
-        }
-    })
 
     const open = () => {
         setDisplay(true)
@@ -26,20 +18,24 @@ const Modal = forwardRef<ModalRef, ModalProps>(({ children}, ref) => {
     const close = () => {
         setDisplay(false)
     }
+    useImperativeHandle(ref, () => {
+        return {
+            openModal: () => open(),
+            close: () => close(),
+        }
+    })
 
     if (display) {
         return createPortal(
             <div className={'modal-wrapper'}>
                 <div className={'modal-backdrop'} onClick={close} />
-                <div className={'modal-box'}>
-            {children}
-                </div>
-            </div>, document.getElementById('modal')!
+                <div className={'modal-box'}>{children}</div>
+            </div>,
+            document.getElementById('modal')!,
         )
     }
 
     return null
-
 })
 
 export default Modal

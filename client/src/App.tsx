@@ -11,13 +11,11 @@ import ScoreBoardPage from '@Pages/ScoreBoard'
 import Modal, { ModalRef } from '@Components/Modal'
 
 function App() {
-
     const ModalRef = useRef<ModalRef>(null)
 
     const handleSampleClick = () => {
         ModalRef.current?.openModal()
     }
-
 
     return (
         <ThemeProvider theme={theme}>
@@ -32,7 +30,11 @@ function App() {
 
                         <Modal ref={ModalRef}>
                             <h1>Helllo</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta doloribus excepturi necessitatibus nemo, delectus labore quasi distinctio tempora praesentium fuga fugiat odit, enim ducimus impedit iure quas nisi provident unde?</p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta doloribus excepturi
+                                necessitatibus nemo, delectus labore quasi distinctio tempora praesentium fuga fugiat
+                                odit, enim ducimus impedit iure quas nisi provident unde?
+                            </p>
                         </Modal>
                     </NotificationProvider>
                 </Router>
