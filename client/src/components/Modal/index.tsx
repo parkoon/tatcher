@@ -1,6 +1,8 @@
 import React, { useState, forwardRef, useImperativeHandle } from 'react'
 import { createPortal } from 'react-dom'
 
+import { Wrapper, BackDrop, Box } from './styles'
+
 export type ModalRef = {
     openModal(): void
     close(): void
@@ -27,10 +29,10 @@ const Modal = forwardRef<ModalRef, ModalProps>(({ children }, ref) => {
 
     if (display) {
         return createPortal(
-            <div className={'modal-wrapper'}>
-                <div className={'modal-backdrop'} onClick={close} />
-                <div className={'modal-box'}>{children}</div>
-            </div>,
+            <Wrapper>
+                <BackDrop onClick={close} />
+                <Box>{children}</Box>
+            </Wrapper>,
             document.getElementById('modal')!,
         )
     }
