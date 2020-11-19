@@ -2,15 +2,11 @@ import styled, { keyframes } from 'styled-components'
 
 const BoxFade = keyframes`
     from {
-
-        top: 60%;
-        /* transform: translateY(-20px) */
+        transform: translateY(10%)
     }
 
     to {
-        top: 50%;
-
-        /* transform: translateY(0px) */
+        transform: translateY(0px)
     }
 `
 
@@ -20,6 +16,10 @@ export const Wrapper = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `
 
 export const BackDrop = styled.div`
@@ -34,9 +34,6 @@ export const BackDrop = styled.div`
 
 export const Box = styled.div`
     position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     height: 70%;
     width: 60%;
     background-color: #fff;
@@ -45,5 +42,5 @@ export const Box = styled.div`
     overflow: auto;
     padding: 40px;
     transition: 0.2s;
-    animation: ${BoxFade} 0.3s 0s linear alternate;
+    animation: ${BoxFade} 0.3s;
 `
