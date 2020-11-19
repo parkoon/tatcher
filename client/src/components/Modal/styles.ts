@@ -34,8 +34,8 @@ export const BackDrop = styled.div`
 
 export const Box = styled.div`
     position: relative;
-    height: 70%;
-    width: 60%;
+    max-height: 70%;
+    max-width: 40%;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     z-index: 101;
